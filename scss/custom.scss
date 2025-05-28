@@ -12,18 +12,17 @@ $sena-danger: #ff0b55;
 $sena-info: #ffd63a;
 $sena-warning: #7c4585;
 
-$theme-colors: map-merge(
-  $theme-colors,
-  (
-    "sena-primary": $sena-primary,
-    "sena-secondary": $sena-secondary,
-    "sena-light": $sena-light,
-    "sena-dark": $sena-dark,
-    "sena-danger": $sena-danger,
-    "sena-info": $sena-info,
-    "sena-warning": $sena-warning,
-  )
+$sena-theme-colors: (
+  "sena-primary": $sena-primary,
+  "sena-secondary": $sena-secondary,
+  "sena-light": $sena-light,
+  "sena-dark": $sena-dark,
+  "sena-danger": $sena-danger,
+  "sena-info": $sena-info,
+  "sena-warning": $sena-warning,
 );
+
+$theme-colors: map-merge($theme-colors, $sena-theme-colors);
 
 $utilities: map-merge(
   $utilities,
@@ -31,28 +30,12 @@ $utilities: map-merge(
     "background-color": (
       property: background-color,
       class: bg,
-      values: (
-        "sena-primary": $sena-primary,
-        "sena-secondary": $sena-secondary,
-        "sena-light": $sena-light,
-        "sena-dark": $sena-dark,
-        "sena-danger": $sena-danger,
-        "sena-info": $sena-info,
-        "sena-warning": $sena-warning,
-      ),
+      values: $theme-colors,
     ),
     "color": (
       property: color,
       class: text,
-      values: (
-        "sena-primary": $sena-primary,
-        "sena-secondary": $sena-secondary,
-        "sena-light": $sena-light,
-        "sena-dark": $sena-dark,
-        "sena-danger": $sena-danger,
-        "sena-info": $sena-info,
-        "sena-warning": $sena-warning,
-      ),
+      values: $theme-colors,
     ),
   )
 );
